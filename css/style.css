@@ -1,0 +1,425 @@
+@font-face {
+    font-family: 'Noto Sans', sans-serif;
+    src: url('fonts/NotoSans-hinted/NotoSans-Regular.ttf') format('truetype');
+}
+body {
+    background-color: #232629;
+    color: white;
+    margin: 0;
+    font-family: 'Noto Sans', sans-serif;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+}
+ul li {
+    overflow: auto;
+    float: left;
+    margin: 0;
+    box-sizing: border-box;
+}
+a {
+    color: #3daee9;
+}
+hr {
+    border-top: 1px solid #7f7f7f;
+    border-bottom: 0px;
+}
+.grid li {
+    padding: 6px;
+}
+.grid li a {
+    display: block;
+    width: 100%;
+    background-color: #31363b;
+    border-radius: 5px;
+    padding: 3px;
+    border: 1px solid #7f7f7f;
+    box-sizing: border-box;
+}
+.grid li a img {
+    display: block;
+    width: 100%;
+}
+.topBar {
+    display: none;
+}
+.leftPanel {
+    position: fixed;
+    height: 100vh;
+    float: left;
+    background-color: #31363b;
+    overflow: auto;
+}
+.leftPanel a {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+    padding: 10px 0 10px 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.leftPanel a.currPage {
+    background-color: #3b4147;
+}
+.leftPanel li {
+    width: 100%;
+}
+.leftPanel .navbrand:hover {
+    background-color: rgba(0, 0, 0, 0) !important;
+}
+.leftPanel a:hover {
+    background-color: #3b4147;
+}
+.leftPanel button {
+    margin-left: 20px;
+    width: calc(100% - 42px);
+}
+.bottom {
+    position: fixed;
+    bottom: 10px;
+}
+article {
+    margin: 0px auto;
+    padding: 12px 0 0 0;
+    overflow: auto;
+}
+video {
+    background-color: black;
+}
+.video {
+    float: left;
+}
+.video ul li {
+    float: right;
+}
+.video ul .ratings {
+    width: calc(100% - 110px);
+}
+.video ul li ul .rating {
+    float: left;
+    padding: 10px;
+    display: inline-block;
+}
+
+.video ul li a, .btn {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #31363b;
+    border: 1px solid #7f7f7f;
+    border-radius: 5px;
+}
+.video ul li a {
+    width: 110px;
+}
+.video ul li a:hover, .btn:hover {
+    background-color: #3b4147;
+}
+.videoStats {
+    float: left;
+}
+.videoStats tr th {
+    text-align: left;
+    padding: 3px 0;
+}
+#series_poster {
+    width: 30%;
+    max-width: 200px;
+    padding: 1em;
+    box-sizing: border-box;
+}
+#series_poster img {
+    width: 100%;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+@media only screen and (min-width: 435px) {
+    #series_stats {
+        width: 70%;
+    }
+}
+@media only screen and (max-width: 434px) {
+    #series_poster {
+        width: 100%;
+    }
+}
+#series_info li ul li a img {
+    display:inline-block;
+    height:1em;
+    vertical-align: middle;
+}
+#series_info li ul li small:after {
+    content:"•";
+    padding: 0 10px;
+}
+#series_info li ul li:last-child small:after {
+    content: "" !important;
+    padding: 0 !important;
+}
+.season {
+    width: 100%;
+    font-size: 18pt;
+    margin-bottom: 20px;
+}
+.episode {
+    width: 100%;
+    float: left;
+    overflow: auto;
+    line-height: 36px;
+    border-left: 1px solid #7f7f7f;
+    border-right: 1px solid #7f7f7f;
+    font-size: 12pt;
+}
+.episode a{
+    width: 100%;
+    display: block;
+    overflow: auto;
+    color: white;
+}
+.episode a:hover {
+    background-color: #3b4147;
+}
+.season .episode:first-child {
+    border-radius: 5px 5px 0 0;
+    border-top: 1px solid #7f7f7f;
+}
+.season .episode:last-child {
+    border-radius: 0 0 5px 5px;
+    border-bottom: 1px solid #7f7f7f;
+}
+.episode:nth-child(even) {
+    background-color: #272b30;
+}
+.episode:nth-child(odd){
+    background-color: #31363b;
+}
+.episode div {
+    float: left;
+}
+.episode div:first-child {
+    padding: 0 10px;
+}
+.grid li {
+    width: 200px;
+    height: 300px;
+}
+@media only screen and (max-width: 1575px) {
+    .topBar {
+        display: block;
+        position: fixed;
+        width: 100%;
+        box-sizing: border-box;
+        background-color: #31363b;
+        z-index: 0;
+    }
+    .topBar img {
+        vertical-align: middle;
+        height: 32px;
+        padding: 12px;
+    }
+    .leftPanel {
+        transition: left 0.5s;
+        font-size: 120%;
+    }
+    @media only screen and (max-width: 300px) {
+        .leftPanel, .leftPanel .bottom {
+            left: -75vw;
+             width: 75vw;
+        }
+    }
+    @media only screen and (min-width: 301px) {
+        .leftPanel, .leftPanel .bottom {
+            width: 225px;
+            left: -225px;
+        }
+    }
+    .leftPanel.unhide {
+        left: 0 !important;
+        background-color: #31363b;
+        box-shadow: 0px 0px 10px #000;
+        z-index: 2;
+    }
+    .leftPanel.unhide .bottom {
+        transition: left 0.5s;
+        left:0 !important;
+    }
+    .coverArticle {
+        transition: background 0.5s;
+        width: 100%;
+        height: 100%;
+    }
+    .leftPanel.unhide + .coverArticle {
+        position: fixed;
+        background: rgba(127 ,127 ,127 ,0.75);
+        z-index: 1;
+    }
+    @media only screen and (min-width: 1220px) {
+        article {
+            width: 1200px;
+            padding: 72px 0 0 0 !important;
+        }
+        video {
+            width: 1200px;
+            height: 675px;
+        }
+    } @media only screen and (max-width: 1219px) and (min-width: 1070px) {
+        article {
+            width: 1050px;
+            padding: 72px 0 0 0 !important;
+        }
+        video {
+            width: 1050px;
+            height: 590.625px;
+        }
+    } @media only screen and (max-width: 1069px) and (min-width: 920px) {
+        article {
+            width: 900px;
+            padding: 72px 0 0 0 !important;
+        }
+        video {
+            width: 900px;
+            height: 506.25px;
+        }
+    } @media only screen and (max-width: 919px) and (min-width: 770px) {
+        article {
+            width: 750px;
+            padding: 72px 0 0 0 !important;
+        }
+        video {
+            width: 750px;
+            height: 421.875px;
+        }
+    } @media only screen and (max-width: 769px) and (min-width: 620px) {
+        article {
+            width: 600px;
+            padding: 72px 0 0 0 !important;
+        }
+        video {
+            width: 600px;
+            height: 337.5px;
+        }
+    } @media only screen and (max-width: 619px) and (min-width: 470px) {
+        article {
+            width: 450px;
+            padding: 72px 0 0 0 !important;
+        }
+        video {
+            width: 450px;
+            height: 253.125px;
+        }
+    } @media only screen and (max-width: 469px) {
+        article {
+            width: 98%;
+            box-sizing: border-box;
+            padding: 72px 0 0 0 !important;
+            margin-left: 1%;
+            float: left;
+        }
+        video {
+            width: 100%;
+        }
+        .grid {
+            margin: 0 auto;
+            width: min-content;
+            width: -moz-min-content;
+            width: -webkit-min-content;
+            min-width: 300px;
+        }
+    }
+    .grid li {
+        width: 150px;
+        height: 225px;
+    }
+    .video {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .videoStats {
+        padding-left: 1vw;
+        width: 100%;
+    }
+    .videoStats tr th {
+        width: 12vw;
+    }
+}
+@media only screen and (max-width: 1799px) and (min-width: 1576px) {
+    .leftPanel, .leftPanel .bottom {
+        width: 10vw;
+    }
+    article {
+        width: 1400px;
+        padding-left: 10vw;
+        overflow: auto;
+    }
+    video {
+        width: 1050px;
+        height: 590.625px;
+    }
+    .video {
+        width: 1050px;
+    }
+    .videoStats {
+        padding-left: 1vw;
+        width: 350px;
+        box-sizing: border-box;
+    }
+    .videoStats tr th {
+        width: 120px;
+    }
+}
+@media only screen and (min-width: 1800px) {
+    .leftPanel, .leftPanel .bottom {
+        width: 9vw;
+    }
+    article {
+        padding-left: 9vw;
+        width: 1600px;
+    }
+    video {
+        width: 48vw;
+        height: 27vw;
+        max-width: 960px;
+        max-height: 540px;
+    }
+    .video {
+        width: 48vw;
+        max-width: 960px;
+    }
+    .videoStats {
+        padding-left: 1vw;
+        width: 31vw;
+        max-width: 627px;
+    }
+    .videoStats tr th {
+        width: 8vw;
+    }
+}
+#scanStatusWrapper {
+    position: fixed;
+    bottom: 3vh;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    opacity: 1;
+    transition: bottom 0.5s;
+}
+#scanStatus {
+    opacity: inherit;
+    width: -moz-min-content;
+    width: -webkit-min-content;
+    margin: 0 auto;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(127, 127, 127, 0.5);
+}
+.hidden {
+    bottom: -64px !important;
+    opacity: 0;
+}
