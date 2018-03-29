@@ -1,5 +1,4 @@
 <?php
-# FIXME prevent two scans from being able to run simultaneously.
 $omdb_apikey = '';
 $ffmpeg = '/usr/bin/ffmpeg';
 $path_to_store_generated_thumbnail = '.video_thumbs';
